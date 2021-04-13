@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAXLINE 1000
 
-char pattern[] = "ould";
+char pattern[] = "ould\0";
 
 int getLine(char line[],int max)
 {
@@ -25,8 +25,8 @@ int strIndex(char source[],char serachfor[])
 	for (i = 0; source[i] != '\0'; i++)
 	{
 		for (j = i, k = 0; serachfor[k] != '\0'&&source[j] == serachfor[k];j++,k++);
-
-		if (k>0&&serachfor[k]!='\0')
+		//printf("%s",serachfor[k-1]);
+		if (k>0&&serachfor[k]=='\0')
 		{
 			//printf("enter");
 			return i;
@@ -39,7 +39,7 @@ int main()
 {
 	char charLine[MAXLINE];
 	int found = 0;
-
+	printf("\"loud\" pattern:%s", pattern);
 	while (getLine(charLine, MAXLINE)>0)
 	{
 		//printf("keypress:%s", charLine);
