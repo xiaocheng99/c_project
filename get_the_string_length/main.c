@@ -18,4 +18,7 @@ int main()
 	printf("%c\n",*(p+1));
 	printf("this function will count the char number\n");
 	printf("the string have %d characters\n",strlen(p));
+	printf("the string have %d characters\n",strlen(str));
+	printf("the string have %d characters\n",strlen(&str[0]));
+
 }
